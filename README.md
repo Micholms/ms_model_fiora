@@ -16,7 +16,7 @@ Installation guide for the Fiora Python package (under 10 minutes):
 
 Clone the project folder 
 
-    git clone https://github.com/BAMeScience/fiora.git
+    git clone https://github.com/Micholms/ms_model_fiora
 
 (Optional) Create a new conda environment
 
