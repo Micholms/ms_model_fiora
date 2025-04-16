@@ -17,7 +17,7 @@ sys.path.append("..")
 sys.path.append("../'MS models'/fiora/")
 from os.path import expanduser
 home = expanduser("~")
-from fiora.MOL.constants import DEFAULT_PPM, PPM, DEFAULT_MODES
+from fiora.MOL.constants import DEFAULT_MODES
 from fiora.IO.LibraryLoader import LibraryLoader
 from fiora.MOL.FragmentationTree import FragmentationTree 
 import fiora.visualization.spectrum_visualizer as sv
@@ -220,7 +220,7 @@ def train_new_model(continue_with_model=None):
         trainer = Trainer(geo_data, y_tag=y_label, problem_type="regression", train_keys=train_keys, val_keys=val_keys, metric_dict=metric_dict, split_by_group=True, seed=seed, device=dev)
         scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, patience = 8, factor=0.5, mode = 'min', verbose = True)
     
-        checkpoints = trainer.train(model, optimizer, loss_fn, scheduler=scheduler, batch_size=training_params['batch_size'], epochs=training_params["epochs"], val_every_n_epochs=3, with_CCS=training_params["with_CCS"], with_RT=training_params["with_RT"], masked_validation=False, tag=tag) 
+        checkpoints = trainer.train(model, optimizer, loss_fn, scheduler=scheduler, batch_size=training_params['batch_size'], epochs=training_params["epochs"], val_every_n_epochs=1, with_CCS=training_params["with_CCS"], with_RT=training_params["with_RT"], masked_validation=False, tag=tag) 
         print(checkpoints)
         return model, checkpoints
 
