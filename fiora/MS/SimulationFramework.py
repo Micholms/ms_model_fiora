@@ -66,8 +66,8 @@ class SimulationFramework:
         precursor_prob = sim_probs[-1].tolist()
         precursor = edge_map[None]
         
-        sim_peaks["mz"].append(precursor.mz[precursor_mode]) # TODO allow multiple ion modes of precursor
-        sim_peaks["intensity"].append(precursor_prob)
+        sim_peaks["mz"].append(round(precursor.mz[precursor_mode],3)) # TODO allow multiple ion modes of precursor
+        sim_peaks["intensity"].append(round(precursor_prob,3))
         sim_peaks["annotation"].append(precursor.smiles + "//" + precursor_mode)
 
         edge_probs = sim_probs[:-2].unflatten(-1, sizes=(-1, len(mode_mapper)*2))
@@ -93,8 +93,8 @@ class SimulationFramework:
                                     merged = True
                                     break
                         if merged: continue
-                        sim_peaks["mz"].append(mz)
-                        sim_peaks["intensity"].append(intensity)
+                        sim_peaks["mz"].append(round(mz,3))
+                        sim_peaks["intensity"].append(round(intensity,3))
                         sim_peaks["annotation"].append(annotation)
             rf = frags.get('right')
             if rf:
@@ -114,8 +114,8 @@ class SimulationFramework:
                                     merged = True
                                     break 
                         if merged: continue
-                        sim_peaks["mz"].append(mz)
-                        sim_peaks["intensity"].append(intensity)
+                        sim_peaks["mz"].append(round(mz,3))
+                        sim_peaks["intensity"].append(round(intensity,3))
                         sim_peaks["annotation"].append(annotation)    
         
         if transform_prob == "square":
