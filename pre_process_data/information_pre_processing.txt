@@ -1,0 +1,1 @@
+To run the model with data from TIMS-TOF you need to pre-procces the data. This can be done using my other github. 
