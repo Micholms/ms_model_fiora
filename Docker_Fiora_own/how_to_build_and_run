@@ -1,0 +1,11 @@
+ 
+To build: Inside folder were the Docker file is:         Takes ~ 10 min
+
+    sudo docker build -t graphormer_docker_spc ./
+
+To run:
+
+    sudo docker run -p 8501:8501 --runtime=nvidia --gpus all graphormer_docker_spc
+
+
+
