@@ -28,7 +28,15 @@ Clone the project folder
     conda create -n fiora python=3.10.8
     conda activate fiora
 
-Change into the project directory (`cd fiora`). Then, install the package by using the setup.py via
+Rename the folder 
+
+    mv ms_model_fiora fiora
+    
+Change into the project directory.
+
+    cd fiora
+
+Then, install the package by using the setup.py via
 
     pip install .
 
