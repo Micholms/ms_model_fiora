@@ -34,8 +34,22 @@ Change into the project directory (`cd fiora`). Then, install the package by usi
 
 ## Train model
 
+Use the train_model.py file
+
+    !python /notebooks/train_model.py -i test.csv -l 0.001 -e 50 -t "RGCNConv_1"     #-m ../../checkpoint_Mona_only.best.pt
+    
+Where 
+    * -i is the input csv used for training, could with advantage be generated through the tims_tof_data_extraction packaged (see: https://github.com/Micholms/tims_tof_data_extraction)
+    * -l is the starting learning rate
+    * -e the number of epochs
+    * -t the tag of the model
+    * -m is an option to add a pre-trained model.
+    
 ## Evaulate model
+Evaluation of the model can be done through the 
+"evaulation_model.ipynb" under "notebooks". 
 
 ## Predict new molecules
+
 
 ## Install Docker
