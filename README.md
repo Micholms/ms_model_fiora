@@ -50,6 +50,13 @@ Evaluation of the model can be done through the
 "evaulation_model.ipynb" under "notebooks". 
 
 ## Predict new molecules
+Use the original fiora script:
 
+    fiora-predict -i examples/example_input.csv  -o examples/example_spec.mgf
 
 ## Install Docker
+
+Follow the instructions under the "how_to_install_and_run" file in the Docker folder.
+
+Note: The docker will be loaded with a specific model version, it is possible to change this after training a model. 
+Change the checkpoint files in the folder to wanted and change what to load in the Docker file. 
